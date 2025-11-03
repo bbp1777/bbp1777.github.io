@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brent Porter | Electrical Engineer</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Rajdhani', sans-serif;
+      background-color: #f4f9ff;
+      color: #1a1a1a;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar / Topbar base */
+    nav {
+      width: 230px;
+      background-color: #e0f0ff;
+      border-right: 2px solid #bcd8f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 40px;
+      transition: all 0.3s ease;
+    }
+
+    nav h2 {
+      color: #004c91;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      width: 100%;
+      margin: 0;
+    }
+
+    nav ul li {
+      width: 100%;
+    }
+
+    nav ul li a {
+      display: block;
+      text-decoration: none;
+      color: #004c91;
+      padding: 14px 20px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+
+    nav ul li a:hover {
+      background-color: #cde7ff;
+    }
+
+    /* Main content */
+    main {
+      flex: 1;
+      padding: 40px;
+    }
+
+    section {
+      display: none;
+    }
+
+    section.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    h1 {
+      color: #003366;
+      margin-top: 0;
+    }
+
+    h3 {
+      color: #004c91;
+    }
+
+    .project {
+      border-left: 4px solid #0094ff;
+      background-color: #eaf5ff;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+    }
+
+    .resume-container {
+      border: 1px solid #bcd8f4;
+      background: #ffffff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    footer {
+      margin-top: 40px;
+      border-top: 1px solid #cfddee;
+      padding-top: 20px;
+      font-size: 0.9em;
+      text-align: center;
+      color: #555;
+    }
+
+    .socials a {
+      text-decoration: none;
+      color: #004c91;
+      margin: 0 10px;
+    }
+
+    .socials a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile styles */
+    .menu-toggle {
+      display: none;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background-color: #004c91;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 16px;
+      z-index: 1000;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      nav {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 2px solid #bcd8f4;
+        padding: 10px 0;
+        display: none;
+      }
+      nav.show {
+        display: flex;
+      }
+      nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      main {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+
+  <nav id="sidebar">
+    <h2>BP</h2>
+    <ul>
+      <li><a href="#" onclick="showSection('about')">About</a></li>
+      <li><a href="#" onclick="showSection('projects')">Projects</a></li>
+      <li><a href="#" onclick="showSection('resume')">Resume</a></li>
+      <li><a href="#" onclick="showSection('store')">Store</a></li>
+      <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="about" class="active">
+      <h1>Brent Porter</h1>
+      <h3>Electrical Engineer</h3>
+      <p>I am a graduate of the Rochester Institute of Technology (RIT), holding both a Bachelor’s and Master’s degree in Electrical Engineering. My background spans robotics, PCB design, embedded systems, AI applications, and FPGA development using Verilog.</p>
+      <p>I’m passionate about integrating intelligent control and hardware design to create innovative systems that bridge software and hardware. My experience covers embedded microcontroller programming, digital logic design, and practical robotics implementation.</p>
+    </section>
+
+    <section id="projects">
+      <h1>Projects & Portfolio</h1>
+      <div class="project">
+        <h3>Hexapod Robotics Platform</h3>
+        <p>Designed and programmed a six-legged robotic system capable of dynamic gait control and balance stabilization using IMU feedback.</p>
+      </div>
+      <div class="project">
+        <h3>FPGA Signal Processor</h3>
+        <p>Implemented signal filtering and modulation modules in Verilog for real-time signal processing applications.</p>
+      </div>
+      <div class="project">
+        <h3>Embedded Sensor Network</h3>
+        <p>Developed a distributed embedded sensor platform with wireless communication for environmental data collection.</p>
+      </div>
+    </section>
+
+    <section id="resume">
+      <h1>Resume</h1>
+      <div class="resume-container">
+        <p><strong>Education:</strong> Rochester Institute of Technology — BS/MS in Electrical Engineering</p>
+        <p><strong>Skills:</strong> Robotics, PCB Design, Embedded Systems, Verilog FPGA Design, Python, C/C++, AI Applications</p>
+        <p><strong>Experience:</strong> Electrical Engineer with experience in hardware design, embedded development, and intelligent systems integration.</p>
+      </div>
+      <p><a href="resume.pdf" download>Download PDF Resume</a></p>
+    </section>
+
+    <section id="store">
+      <h1>Store (Coming Soon)</h1>
+      <p>Future space for selling custom-designed electronics, robotics kits, or embedded development boards.</p>
+    </section>
+
+    <section id="contact">
+      <h1>Contact & Socials</h1>
+      <p>Feel free to reach out or connect with me online:</p>
+      <div class="socials">
+        <p>
+          <a href="#" target="_blank">LinkedIn</a> |
+          <a href="#" target="_blank">Instagram</a> |
+          <a href="mailto:your@email.com">Email</a>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Brent Porter | Designed & coded by Brent Porter</p>
+    </footer>
+  </main>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.getElementById('sidebar').classList.remove('show'); // auto close on mobile
+    }
+
+    function toggleMenu() {
+      document.getElementById('sidebar').classList.toggle('show');
+    }
+  </script>
+
+</body>
+</html>
