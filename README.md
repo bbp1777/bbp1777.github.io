@@ -1,2 +1,2 @@
-# brent-porter-ee
+# Brent Porter
 Website and portfolio for Brent Porter, a graduate from Rochester Institute of Technology with a BS + MS in electrical engineering.
